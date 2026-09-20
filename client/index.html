@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CollabSphere</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Portfolio Project</p>
+          <h1>CollabSphere</h1>
+        </div>
+        <div class="auth-actions">
+          <button id="logoutBtn" class="secondary hidden">Logout</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="panel auth-panel">
+          <h2>Account</h2>
+
+          <form id="authForm" class="stack">
+            <input type="text" id="nameInput" placeholder="Full name" />
+            <input type="email" id="emailInput" placeholder="Email" required />
+            <input type="password" id="passwordInput" placeholder="Password" required />
+            <div class="row">
+              <button type="submit" id="submitAuthBtn">Register</button>
+              <button type="button" id="toggleModeBtn" class="secondary">Switch to Login</button>
+            </div>
+          </form>
+
+          <div id="authStatus" class="status-box"></div>
+        </aside>
+
+        <section class="panel main-panel">
+          <h2>Projects</h2>
+
+          <form id="projectForm" class="stack project-form">
+            <input type="text" id="projectTitle" placeholder="Project title" required />
+            <textarea id="projectDescription" placeholder="Project description"></textarea>
+            <input type="text" id="projectMembers" placeholder="Invite members by email (comma separated)" />
+            <div class="row">
+              <label class="checkbox-wrap">
+                <input type="checkbox" id="projectPublic" />
+                <span>Public</span>
+              </label>
+              <button type="submit">Create Project</button>
+            </div>
+          </form>
+
+          <div id="projectList" class="project-list"></div>
+        </section>
+
+        <aside class="panel details-panel">
+          <h2>Project Workspace</h2>
+
+          <div id="selectedProjectInfo" class="selected-project">
+            <p>Select a project to work on.</p>
+          </div>
+
+          <div class="mini-section">
+            <h3>Members</h3>
+            <form id="memberForm" class="stack">
+              <input type="email" id="memberEmail" placeholder="Add collaborator email" />
+              <button type="submit">Add Member</button>
+            </form>
+            <div id="projectShareLink" class="share-link"></div>
+            <div id="projectAnalytics" class="analytics-grid"></div>
+          </div>
+
+          <div class="mini-section">
+            <h3>Notes</h3>
+            <form id="noteForm" class="stack">
+              <input type="text" id="noteTitle" placeholder="Note title" />
+              <textarea id="noteContent" placeholder="Write markdown notes..."></textarea>
+              <button type="submit">Save Note</button>
+            </form>
+            <div id="notesList" class="notes-list"></div>
+          </div>
+
+          <div class="mini-section">
+            <h3>Files</h3>
+            <form id="fileForm" class="stack">
+              <input type="file" id="fileInput" />
+              <button type="submit">Upload File</button>
+            </form>
+            <div id="fileList" class="file-list"></div>
+          </div>
+
+          <div class="mini-section">
+            <h3>AI Tools</h3>
+            <textarea id="aiCodeInput" placeholder="Paste code or project description here..."></textarea>
+            <div class="row ai-actions">
+              <button id="explainBtn" class="secondary">Explain</button>
+              <button id="documentBtn" class="secondary">Generate Docs</button>
+            </div>
+            <pre id="aiOutput" class="ai-output">AI output will appear here.</pre>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
